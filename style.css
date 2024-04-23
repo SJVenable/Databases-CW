@@ -7,3 +7,8 @@ body {
     margin-left: 20px;
     text-align: center;
   }
+  ul {
+    display: inline;
+    margin: 60px;
+  }
+/* https://nvdcopccmmupvigzaxai.supabase.co/rest/v1/Vehicles?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52ZGNvcGNjbW11cHZpZ3pheGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTM5MDQyMzgsImV4cCI6MjAyOTQ4MDIzOH0.YkI4-92d2MqBkofnSvWphUfhS3_TfZWkGgOfv76cJcY */
