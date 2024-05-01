@@ -7,8 +7,8 @@
   
 
   const button = document.querySelector("button");
-
-  button.addEventListener("click", createParagraph);
+  console.log(button.id);
+  button.addEventListener("click", getVehicle);
 
   // Fetch data from the table
   async function fetchData() {
@@ -17,15 +17,29 @@
       , data);
       //createParagraph();
   }
-  function createParagraph() {
-    button.textContent = "changed!";
-    const para = document.body.createElement("p");
-    para.textContent = "You clicked the button!";
-    document.body.appendChild(para);
-    alert("button has been pressed")
+  async function getVehicle() {
+    // get string from text boxes
+    const input = document.getElementById("Registration");
+    const value = input.value;
+    console.log("fetched reg: ", value);
+
+    const {data, error} = await supabase.from('Vehicles').select().eq('VehicleID', value);
+    console.log("fetched data: ", data.VehicleID);
+    var resultBox = document.getElementById("results");
+    for(let i = 0; i < data.length; i++) {
+      console.log(i);
+      var text = document.createTextNode(data[i].Make + ", ");
+      resultBox.appendChild(text);
+    }
+    
   }
 
+/*   0: {VehicleID: 'GHT56FN', Make: 'Fiat', Model: 'Punto', Colour: 'Blue', OwnerID: 4}
+1: {VehicleID: 'NG51PKO', Make: 'Ford', Model: 'Fiesta', Colour: 'Grey', OwnerID: 1}
+2: {VehicleID: 'PQR6465', Make: 'Audi', Model: 'A4', Colour: 'Red', OwnerID: 2}
+3: {VehicleID: 'SFD43FH', Make: 'Lancia', Model: 'Thema', Colour: 'Blue', OwnerID: 3}
 
+ */
 
   // Call the fetchData function to retrieve data
   fetchData();
