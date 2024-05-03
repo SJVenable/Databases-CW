@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
 <script src="supabase.js" type="module" defer></script>
-<html>
+<html lang="en">
   <head>
-      <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>COMP1004CW</title>
   </head>
   <header>
     <nav class="main-component">
       <h1>People Search</h1>
       <ul class="navbar">
-         <li><a>People search</a></li>
-         <li><a href="VehicleSearch.html">Vehicle search</a></li>
-         <li><a href="AddVehicle.html">Add a vehicle</a></li>
+        <ul><a>People search</a></ul>
+        <ul><a href="vehiclesearch.html">Vehicle search</a></ul>
+        <ul><a href="addvehicle.html">Add a vehicle</a></ul>
       </ul>
    </nav>
   </header>
@@ -27,7 +28,7 @@
       <p>Search by driving license number: </p>
       <label for="Number"></label>
       <input id="Number" name="Number">
-      <button name="button">Submit</button>
+      <button type="button" name="button">Submit</button>
       <div id = "results" >
         
       </div>

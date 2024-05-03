@@ -58,8 +58,8 @@ ul {
   flex: 1;
   list-style: none;
   font-size: 1.2rem;
-  display: inline-flex;
-  text-align: right;
+  text-align: center;
+  padding-right: 6%;
 }
 li {
   flex: 1;
