@@ -46,7 +46,7 @@ async function addOwnerAndVehicle() {
 
   if(personID == "" || name == "" || address == "" || dob == "" || license == ""
    || expire == "" || rego == "" || make == "" || model == "" || colour == "" || owner == "") {
-    message.textContent = "Error - fields must all be filled except Owner";
+    message.textContent = "Error - fields must all be filled";
     return;
   }
   
@@ -113,9 +113,13 @@ async function getVehicle() {
   const license = document.getElementById("rego");
   const licenseValue = license.value;
 
+  if(licenseValue == "") {
+    message.textContent = "Error, field is empty";
+    return;
+  }
   const {data: vehicleData, error:vehicleError} = await supabase.from('Vehicles').select().eq('VehicleID', licenseValue);
   if(vehicleData == null || vehicleData[0] == null) {
-    message.textContent = "Error, license number not in the database";
+    message.textContent = "No result found";
     resultBox.textContent = "";
     return;
   }
@@ -154,6 +158,10 @@ async function getPerson() {
   const license = document.getElementById("license");
   const licenseValue = license.value;
 
+  if(licenseValue == "" && nameValue == "" || licenseValue != "" &&  nameValue != "") {
+    message.textContent = "Error, exactly one box can be used at a time";
+    return;
+  }
   const {data: vehicleData, error:vehicleError} = await supabase.from('Vehicles').select().eq('VehicleID', licenseValue);
   const {data:personData, error:personError} = await supabase.from('People').select().ilike('Name', `%${nameValue}%`);   
   
