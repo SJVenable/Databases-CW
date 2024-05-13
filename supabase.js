@@ -66,6 +66,7 @@ async function addOwnerAndVehicle() {
     OwnerID: owner
   })
   message.textContent = "Vehicle added successfully";
+  
 
 }
 
@@ -114,7 +115,7 @@ async function getVehicle() {
 
   const {data: vehicleData, error:vehicleError} = await supabase.from('Vehicles').select().eq('VehicleID', licenseValue);
   if(vehicleData == null || vehicleData[0] == null) {
-    message.textContent = "Error";
+    message.textContent = "Error, license number not in the database";
     resultBox.textContent = "";
     return;
   }
@@ -127,7 +128,7 @@ async function getVehicle() {
   const newDiv = document.createElement("div");
   const box = document.createElement("p");
   newDiv.appendChild(box);
-  if(personError != null || personData != null)
+  if(personError != null || personData == null)
     box.textContent = printVehicleData(vehicleData[0]) + "\n Owner Name: " + personData[0].Name + "\n License: " + personData[0].LicenseNumber;
   else box.textContent = printVehicleData(vehicleData[0]);
   resultBox.appendChild(box);
@@ -201,7 +202,7 @@ async function getPerson() {
     message.textContent = "No result found";
   }
   else if(licenseValue == "" && nameValue == "" || licenseValue != "" && nameValue != "") {
-    message.textContent = "Error";
+    message.textContent = "Error, cannot search both name and license number together.";
     resultBox.textContent = "";
   }
   else {
