@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 
 <script src="supabase.js" type="module" defer></script>
-<html>
+<html lang="en">
   <head>
+    <title>Vehicle Search</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
   </head>
 
   <header>
-    <nav class="main-component">
-      <h1>Vehicle Search</h1>
-      <ul class="navbar">
+    <h1>Vehicle Search</h1>
+    <nav>
+      <ul>
          <li><a href="index.html"></ahref>People search</a></li>
          <li><a></a> Vehicle search</a></li>
          <li><a href="addvehicle.html">Add a vehicle</a></li>
@@ -19,20 +20,27 @@
   </header>
 
   <div id="container">
-    <aside class="sidebar">
-      <img class="sidebar-image" src="play_pic.png" alt="playwright pic">
-    </aside>
+    
     <main>
-      <p>Search by vehicle registration: </p> 
-      <label for="Registration"></label>
-      <input id="Registration" name="Registration">
-      <button type="button" name="button" id="VehicleSearch">Submit</button>
-
+      <div id="text-label">
+        <p>Search by vehicle registration &nbsp </p> 
+        <label for="Registration"></label> <input id="rego">
+      </div>
+      <p></p>
+      <button type="button" id="vehicle-search">Submit</button>
+      <p id="message"></p>
       <div id = "results" >
         
       </div>
+
     </main>
+
+    <aside>
+      <img class="sidebar-image" src="playwright_pic.jpg" alt="playwright pic">
+    </aside>
+
+    <footer>COMP1004 Coursework</footer>
   </div>
-  <footer>COMP1004 Coursework</footer>
+  
 
 </html>

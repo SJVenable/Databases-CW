@@ -1,39 +1,48 @@
 <!DOCTYPE html>
+
 <script src="supabase.js" type="module" defer></script>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>COMP1004CW</title>
+    <title>Add a Vehicle</title>
   </head>
   <header>
-    <nav class="main-component">
-      <h1>People Search</h1>
-      <ul class="navbar">
+    <h1>People Search</h1>
+    <nav>
+      <ul>
         <li><a>People search</a></li>
         <li><a href="vehiclesearch.html">Vehicle search</a></li>
         <li><a href="addvehicle.html">Add a vehicle</a></li>
       </ul>
-   </nav>
+    </nav>
+    
   </header>
   
   <div id="container">
-    <aside class="sidebar">
-      <img class="sidebar-image" src="play_pic.png" alt="playwright pic">
-    </aside>
     <main>
-      <p>Search by driver name: </p> 
-      <label for="Name">Name</label> <input type="text" id="Name">
-      
-      <p>Search by driving license number: </p>
-      <label for="DLNumber">
-      <input id="DLNumber" name="Number">
-      <button type="button" name="button">Submit</button>
-      <div id = "results" >
-        
+      <div id="text-label">
+        <p>Search by driver name &nbsp </p> 
+        <label for="Name"></label> <input id="name">
       </div>
+      <p></p>
+      <div id="text-label">
+        <p>Search by driving license number &nbsp</p>
+        <label for="DLNumber"></label> <input id="license">
+      </div>
+      <p></p>
+      <button type="button" id="people-search">Submit</button>
+      <p id="message"></p>
+      <div id = "results" ></div>
+  
     </main>
+  
+    <aside>
+      <img class="sidebar-image" src="playwright_pic.jpg" alt="playwright pic">
+    </aside>
+
+    <footer>COMP1004 Coursework</footer>
   </div>
-  <footer>COMP1004 Coursework</footer>
+  
 
 </html>
